@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.courseacademy.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.courseacademy.AcademyAdapter
 import com.example.courseacademy.databinding.FragmentAcademyBinding
+import com.example.courseacademy.utils.DataDummy
 
 
 class AcademyFragment : Fragment() {
@@ -18,7 +20,24 @@ class AcademyFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_academy, container, false)
+        fragmentAcademyBinding = FragmentAcademyBinding.inflate(layoutInflater, container, false)
+        return fragmentAcademyBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        if (activity != null) {
+            val courses = DataDummy.generateDummyCourse()
+            val academyAdapter = AcademyAdapter()
+            academyAdapter.setCourses(courses)
+
+            with(fragmentAcademyBinding.rvAcademy) {
+                layoutManager = LinearLayoutManager(context)
+                setHasFixedSize(true)
+                adapter = academyAdapter
+            }
+        }
     }
 
 }

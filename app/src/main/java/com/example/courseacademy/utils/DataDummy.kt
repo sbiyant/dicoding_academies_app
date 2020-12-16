@@ -4,7 +4,7 @@ import com.example.courseacademy.data.CourseEntity
 import com.example.courseacademy.data.ModuleEntity
 
 object DataDummy {
-    fun generateDummyCourse(): List<CourseEntity> {
+    fun generateDummyCourse(): ArrayList<CourseEntity> {
         val courses = arrayListOf<CourseEntity>()
 
         courses.add(
