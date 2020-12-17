@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ShareCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.courseacademy.BookmarkAdapter
 import com.example.courseacademy.R
 import com.example.courseacademy.data.CourseEntity
 import com.example.courseacademy.databinding.FragmentBookmarkBinding

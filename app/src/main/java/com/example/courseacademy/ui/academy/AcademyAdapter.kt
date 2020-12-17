@@ -1,4 +1,4 @@
-package com.example.courseacademy
+package com.example.courseacademy.ui.academy
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.courseacademy.R
 import com.example.courseacademy.data.CourseEntity
 import com.example.courseacademy.databinding.ItemsAcademyBinding
 import com.example.courseacademy.ui.detail.DetailCourseActivity
@@ -49,7 +50,7 @@ class AcademyAdapter : RecyclerView.Adapter<AcademyAdapter.CourseViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): AcademyAdapter.CourseViewHolder {
+    ): CourseViewHolder {
         val itemsAcademyBinding =
             ItemsAcademyBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CourseViewHolder(itemsAcademyBinding)

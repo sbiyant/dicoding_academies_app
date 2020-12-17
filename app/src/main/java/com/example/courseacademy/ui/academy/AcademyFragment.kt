@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.courseacademy.AcademyAdapter
 import com.example.courseacademy.databinding.FragmentAcademyBinding
 import com.example.courseacademy.utils.DataDummy
 
