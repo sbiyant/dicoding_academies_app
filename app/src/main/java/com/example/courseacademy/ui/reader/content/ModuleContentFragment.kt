@@ -5,13 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.courseacademy.R
 import com.example.courseacademy.data.ContentEntity
-import com.example.courseacademy.data.CourseEntity
 import com.example.courseacademy.databinding.FragmentModuleContentBinding
 
 
-class ModuleContentFragment : Fragment() {
+class ModuleContentFragment : Fragment(){
 
     companion object {
         val TAG: String = ModuleContentFragment::class.java.simpleName

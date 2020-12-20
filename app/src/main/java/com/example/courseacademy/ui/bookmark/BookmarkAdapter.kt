@@ -14,6 +14,28 @@ import com.example.courseacademy.ui.detail.DetailCourseActivity
 class BookmarkAdapter(private val callback: BookmarkFragmentCallback) :
     RecyclerView.Adapter<BookmarkAdapter.CourseViewHolder>() {
 
+    private var listCourses = arrayListOf<CourseEntity>()
+
+    fun setCourses(courses: ArrayList<CourseEntity>?) {
+        if (courses == null) return
+        this.listCourses.clear()
+        this.listCourses.addAll(courses)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
+        val itemsBookmarkBinding =
+            ItemsBookmarkBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
+        return CourseViewHolder(itemsBookmarkBinding)
+    }
+
+    override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
+       val course = listCourses[position]
+        holder.bind(course)
+    }
+
+    override fun getItemCount(): Int = listCourses.size
+
     inner class CourseViewHolder(private val binding: ItemsBookmarkBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -44,28 +66,6 @@ class BookmarkAdapter(private val callback: BookmarkFragmentCallback) :
         }
 
     }
-
-    private var listCourses = arrayListOf<CourseEntity>()
-
-    fun setCourses(courses: ArrayList<CourseEntity>) {
-        if (courses == null) return
-        this.listCourses.clear()
-        this.listCourses.addAll(courses)
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
-        val itemsBookmarkBinding =
-            ItemsBookmarkBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-
-        return CourseViewHolder(itemsBookmarkBinding)
-    }
-
-    override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
-       val course = listCourses[position]
-        holder.bind(course)
-    }
-
-    override fun getItemCount(): Int = listCourses.size
 
 
 }

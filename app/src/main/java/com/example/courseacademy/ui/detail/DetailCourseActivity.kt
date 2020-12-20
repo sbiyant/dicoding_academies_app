@@ -2,15 +2,13 @@ package com.example.courseacademy.ui.detail
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
-import com.example.courseacademy.CourseReaderActivity
+import com.example.courseacademy.ui.reader.CourseReaderActivity
 import com.example.courseacademy.R
 import com.example.courseacademy.data.CourseEntity
 import com.example.courseacademy.databinding.ActivityDetailCourseBinding

@@ -13,6 +13,30 @@ import com.example.courseacademy.ui.detail.DetailCourseActivity
 
 class AcademyAdapter : RecyclerView.Adapter<AcademyAdapter.CourseViewHolder>() {
 
+    private var listCourses = arrayListOf<CourseEntity>()
+
+    fun setCourses(courses: ArrayList<CourseEntity>?) {
+        if (courses == null) return
+        this.listCourses.clear()
+        this.listCourses.addAll(courses)
+    }
+
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): CourseViewHolder {
+        val itemsAcademyBinding =
+            ItemsAcademyBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return CourseViewHolder(itemsAcademyBinding)
+    }
+
+    override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
+        val course = listCourses[position]
+        holder.bind(course)
+    }
+
+    override fun getItemCount(): Int = listCourses.size
+
     class CourseViewHolder(private val binding: ItemsAcademyBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -38,28 +62,4 @@ class AcademyAdapter : RecyclerView.Adapter<AcademyAdapter.CourseViewHolder>() {
             }
         }
     }
-
-    private var listCourses = arrayListOf<CourseEntity>()
-
-    fun setCourses(courses: ArrayList<CourseEntity>?) {
-        if (courses == null) return
-        this.listCourses.clear()
-        this.listCourses.addAll(courses)
-    }
-
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): CourseViewHolder {
-        val itemsAcademyBinding =
-            ItemsAcademyBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return CourseViewHolder(itemsAcademyBinding)
-    }
-
-    override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
-        val course = listCourses[position]
-        holder.bind(course)
-    }
-
-    override fun getItemCount(): Int = listCourses.size
 }

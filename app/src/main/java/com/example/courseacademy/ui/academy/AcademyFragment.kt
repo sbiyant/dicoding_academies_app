@@ -12,7 +12,7 @@ import com.example.courseacademy.utils.DataDummy
 
 class AcademyFragment : Fragment() {
 
-    private lateinit var fragmentAcademyBinding: FragmentAcademyBinding
+    private  lateinit var fragmentAcademyBinding: FragmentAcademyBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
