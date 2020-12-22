@@ -7,8 +7,9 @@ import com.example.courseacademy.data.ModuleEntity
 import com.example.courseacademy.databinding.ItemModuleListBinding
 
 class DetailCourseAdapter : RecyclerView.Adapter<DetailCourseAdapter.ModuleViewHolder>() {
+
     inner class ModuleViewHolder(private val binding: ItemModuleListBinding) :
-        RecyclerView.ViewHolder(binding.textModuleTitle) {
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(module: ModuleEntity) {
             binding.textModuleTitle.text = module.title

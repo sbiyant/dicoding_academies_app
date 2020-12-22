@@ -20,6 +20,7 @@ class BookmarkAdapter(private val callback: BookmarkFragmentCallback) :
         if (courses == null) return
         this.listCourses.clear()
         this.listCourses.addAll(courses)
+        this.notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {

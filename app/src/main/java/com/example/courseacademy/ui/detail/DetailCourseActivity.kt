@@ -27,9 +27,11 @@ class DetailCourseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val activityDetailCourseBinding = ActivityDetailCourseBinding.inflate(layoutInflater)
-        detailContentBinding = activityDetailCourseBinding.detailContent
+
 
         setContentView(activityDetailCourseBinding.root)
+
+        detailContentBinding = activityDetailCourseBinding.detailContent
 
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -64,11 +66,11 @@ class DetailCourseActivity : AppCompatActivity() {
     }
 
     private fun populateCourse(course: CourseEntity) {
-        detailContentBinding.apply {
-            textTitle.text = course.title
-            textDescription.text = course.description
-            textDate.text = resources.getString(R.string.deadline_date, course.deadline)
-        }
+
+        detailContentBinding.textTitle.text = course.title
+        detailContentBinding.textDescription.text = course.description
+        detailContentBinding.textDate.text = resources.getString(R.string.deadline_date, course.deadline)
+
 
         Glide.with(this)
             .load(course.imagePath)
