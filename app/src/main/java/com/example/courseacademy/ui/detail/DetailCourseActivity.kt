@@ -28,11 +28,9 @@ class DetailCourseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val activityDetailCourseBinding = ActivityDetailCourseBinding.inflate(layoutInflater)
-
+        detailContentBinding = activityDetailCourseBinding.detailContent
 
         setContentView(activityDetailCourseBinding.root)
-
-        detailContentBinding = activityDetailCourseBinding.detailContent
 
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -51,17 +49,19 @@ class DetailCourseActivity : AppCompatActivity() {
                 viewModel.setSelectedCourse(courseId)
                 val modules = viewModel.getModules()
                 adapter.setModules(modules)
-                populateCourse(viewModel.getCourses() as CourseEntity)
+                populateCourse(viewModel.getCourses())
             }
         }
 
         with(detailContentBinding.rvModule) {
+            val dividerItemDecoration =
+                DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL)
+
             isNestedScrollingEnabled = false
             layoutManager = LinearLayoutManager(this@DetailCourseActivity)
             setHasFixedSize(true)
             this.adapter = adapter
-            val dividerItemDecoration =
-                DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL)
+
             addItemDecoration(dividerItemDecoration)
 
         }

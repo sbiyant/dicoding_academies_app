@@ -57,8 +57,9 @@ dependencies {
     testImplementation "junit:junit:$jUnitVersion"
     androidTestImplementation "junit:junit:$jUnitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
-    androidTestImplementation "androidx.test:runner:$androidTestVersion"
-    androidTestImplementation "androidx.test:rules:$androidTestVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
+//    androidTestImplementation "androidx.test:runner:$androidTestVersion"
+    androidTestImplementation "androidx.test:rules:$androidXTestVersion"
     androidTestImplementation "androidx.test.ext:junit:$jUnitExtVersion"
 
 }

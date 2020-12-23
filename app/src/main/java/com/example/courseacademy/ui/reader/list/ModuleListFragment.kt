@@ -63,6 +63,7 @@ class ModuleListFragment : Fragment(), MyAdapterClickListener {
             adapter.setModules(modules)
             rvModule.layoutManager = LinearLayoutManager(context)
             rvModule.setHasFixedSize(true)
+            rvModule.adapter = adapter
 
             val dividerItemDecoration =
                 DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)

@@ -46,8 +46,7 @@ class CourseReaderActivity : AppCompatActivity(), CourseReaderCallback {
 
     override fun moveTo(position: Int, moduleId: String) {
         val fragment = ModuleContentFragment.newInstance()
-        supportFragmentManager.beginTransaction()
-            .add(R.id.frame_container, fragment, ModuleContentFragment.TAG)
+        supportFragmentManager.beginTransaction().add(R.id.frame_container, fragment, ModuleContentFragment.TAG)
             .addToBackStack(null)
             .commit()
     }
