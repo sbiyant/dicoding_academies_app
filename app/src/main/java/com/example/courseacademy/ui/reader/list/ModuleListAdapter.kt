@@ -48,6 +48,6 @@ class ModuleListAdapter internal constructor(private val listener: MyAdapterClic
     override fun getItemCount(): Int = listModules.size
 }
 
-interface MyAdapterClickListener {
+internal interface MyAdapterClickListener {
     fun onItemClicked(position: Int, moduleId: String)
 }
